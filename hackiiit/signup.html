@@ -1,0 +1,68 @@
+	<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Identity</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+		<script src="js/require.js"></script>
+	</head>
+	<body class="is-preload">
+		<script type="text/javascript" src="js/blockupdated.js"></script>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
+							<h1>Sign UP</h1>
+							<p>Verify your identity and we'll get back to you shortly</p>
+						</header>
+					<div id="userverif">
+							Enter your name<input type="text" name="uid" id="uid"/><br/>
+							Enter your age<input type="text" name="uid" id="uid"/><br/>						
+							Enter your country<input type="text" name="uid" id="uid"/><br/>
+							Gender<input type="text" name="uid" id="uid"/><br/>
+							<button id="uidButton" type="submit">Identify Me</button><br/><br/>
+							<p id="result"></p>
+							<script>
+								document.getElementById("uidButton").onclick = function(e) {
+									if(checkUID(document.getElementById("uid").value)) {
+										//alert("Eligible for voting!");
+										document.getElementById("result").innerHTML = "We know you"
+										document.getElementById("cast").disabled = false;
+									} else {
+										document.getElementById("result").innerHTML = "We don't know you yet! Please register at our portal to create and verify your identity"
+									}
+								}
+							</script>
+					</div>
+
+
+					</section>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>Identity</li>
+						</ul>
+					</footer>
+
+			</div>
+		
+
+		<!-- Scripts -->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+
+	</body>
+</html>
